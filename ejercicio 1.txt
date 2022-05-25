@@ -1,0 +1,52 @@
+
+#include <iostream>
+#include <locale.h>
+#include <cstdlib>
+using namespace std;
+
+int main ()
+{
+    setlocale(LC_CTYPE, "Spanish");
+    int anio_actual=2022, mes_actual, dia_actual;
+    int anio_nacimiento, mes_nacimiento, dia_nacimeinto;
+    int respuesta_dia, respuesta_mes;
+    cout << "       Calculando la Edad, Mes y Dia de una persona "<<endl;
+    cout<< "        ---------------------------------------------"<<endl;
+    cout<<endl;
+    cout<<" Ingrese los datos por favor "<< endl;
+    cout<<endl;
+    cout << "Año Actual: "<< anio_actual<<endl;
+    cout << "Mes Actual: ";   cin >> mes_actual;
+    cout << "Dia Actual: ";  cin >> dia_actual;
+    cout<<endl;
+    cout<<" Ingrese los datos por favor "<< endl;
+    cout << "\Año Nacimiento: ";  cin >> anio_nacimiento;
+    cout << "Mes de Nacimiento: ";  cin >> mes_nacimiento;
+    cout << "Dia Nacimiento: ";  cin >> dia_nacimeinto;
+
+    if ( dia_actual < dia_nacimeinto  )
+    {
+        dia_actual = dia_actual + 30;
+        mes_actual = mes_actual - 1;
+        respuesta_dia =  dia_actual - dia_nacimeinto;
+    }
+    else
+        {
+            respuesta_dia =  dia_actual - dia_nacimeinto;
+        }
+    if( mes_actual < mes_nacimiento )
+    {
+        mes_actual = mes_actual + 12;
+        anio_actual = anio_actual - 1 ;
+        respuesta_mes = mes_actual - mes_nacimiento;
+    }
+    else
+        respuesta_mes = mes_actual - mes_nacimiento;
+    cout<<endl;
+    cout << "La persona que ingreso los datos tiene las siguientes datos: "<<endl;
+    cout << " Edad: " <<anio_actual - anio_nacimiento << endl;
+    cout << " Mes: " << respuesta_mes << endl;
+    cout << " Dia: " << respuesta_dia << endl;
+
+    return 0;
+}
